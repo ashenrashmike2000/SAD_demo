@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 // controller is used to define endpoints
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserController {
     //todo: use dependency injection
 
-    @Autowired
+    @Qualifier("inMemoryUserRepository")
     UserRepository userRepository;
 
     // retrieving an existing user endpoint (get user) -> GET
