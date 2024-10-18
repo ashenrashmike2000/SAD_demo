@@ -26,6 +26,7 @@ public class UserController {
     public void addUser(@RequestBody User user){
         userRepository.save(user);
     }
+
     // removing a user
     // updating a user
     // or any other user related actions.
@@ -42,4 +43,6 @@ public class UserController {
     //dependency injection
     //1. property injection
     //2. constructor injection
+
+    //Connect to an actual database(postgresql)
 }
