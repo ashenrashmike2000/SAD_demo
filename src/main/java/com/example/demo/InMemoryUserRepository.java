@@ -1,8 +1,11 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashMap;
 import java.util.Map;
 
+@Component
 public class InMemoryUserRepository implements UserRepository {
 
     private Map<Integer, User> userMap = new HashMap<>();

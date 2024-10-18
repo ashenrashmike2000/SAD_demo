@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 // controller is used to define endpoints
@@ -7,7 +8,9 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class UserController {
     //todo: use dependency injection
-    UserRepository userRepository = new InMemoryUserRepository();
+
+    @Autowired
+    UserRepository userRepository;
 
     // retrieving an existing user endpoint (get user) -> GET
     @GetMapping("/user")
@@ -32,4 +35,8 @@ public class UserController {
     //prerequisites for the next week
     // 1. postgresql database
     // 2. pgadmin tooL
+
+    //dependency injection
+    //1. property injection
+    //2. constructor injection
 }
