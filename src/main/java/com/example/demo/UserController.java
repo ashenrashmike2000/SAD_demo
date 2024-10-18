@@ -1,17 +1,19 @@
 package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 // controller is used to define endpoints
 // an endpoint is a method in controller
 @RestController
 public class UserController {
-    //todo: use dependency injection
 
-    @Qualifier("inMemoryUserRepository")
     UserRepository userRepository;
+
+    @Autowired
+    public UserController(UserRepository repo) {
+        this.userRepository = repo;
+    }
 
     // retrieving an existing user endpoint (get user) -> GET
     @GetMapping("/user")
